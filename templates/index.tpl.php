@@ -1,4 +1,20 @@
-<header>
+<?php session_start(); ?>
+<?php if(file_exists('./Belépés/'.$keres['fajl'].'.php')) { include("./Belépés/{$keres['fajl']}.php"); } ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title><?= $ablakcim['cim'] ?></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Style/style.css" type="text/css">
+    <script type="text/javascript" src="Java/script.js"></script>
+
+    <?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
+    
+     
+</head>
+<body>
+    <header>
     <div id="wrapper">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav">
@@ -15,7 +31,7 @@
         </ul>
     </nav>
                 </div>
-                <div id="be"><?php if(isset($_SESSION['login'])) { ?>Bejelentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?></div>
+                <div id="be"><?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?></div>
     </header>
     
 
